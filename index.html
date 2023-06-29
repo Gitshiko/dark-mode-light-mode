@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Light Mode</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container lightMode">
+        <div class="modeSelector">
+            <h2 id="modeDisplay">This is light mode</h2>
+            <button id="modeButton">Change the view mode</button>
+            <button id="lightenButton">Make a bit lighter</button>
+        </div>
+        <div class="content">
+            <img src="images/hero-image.webp" alt="hero image">
+            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia debitis voluptate eveniet porro at! Porro ut officiis est quidem fugit provident dicta maiores molestias voluptatem minima labore commodi tempore aperiam doloribus magni nihil inventore animi ex nesciunt natus, ea eos ad quaerat reiciendis! Dolor nemo nisi at sed, iure voluptate.</p>
+        </div>
+        <div class="content2">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam libero consequatur distinctio animi inventore delectus amet itaque aperiam vero, laudantium id ad nesciunt earum est odit ex, cum ullam? Quaerat ea aperiam voluptas porro iusto architecto beatae! Maxime, ipsa unde ullam possimus perspiciatis accusantium quo eos. Exercitationem vitae, alias blanditiis quidem ab repellat enim sint. Quaerat modi unde doloribus exercitationem quis nam, consequuntur totam laborum numquam facilis corrupti voluptatum soluta praesentium aperiam ex, minima officia odio aliquid atque molestias adipisci culpa repellendus. Nobis sapiente rem minima tenetur, placeat reiciendis in illum cupiditate quaerat incidunt at quis quas dolor necessitatibus. Necessitatibus accusantium excepturi, exercitationem ut incidunt porro! Libero eveniet praesentium, fugit iure saepe possimus maiores unde veniam earum, beatae, magnam facere culpa quisquam quam consectetur rem quis ea quas porro ipsum. Facere veritatis ab a, amet saepe vel optio nesciunt architecto exercitationem magnam tenetur molestiae rerum recusandae veniam in unde quos est eligendi temporibus ipsum reiciendis necessitatibus maxime modi! Animi dolorem, amet, reprehenderit, nisi fugiat exercitationem vel sapiente repellat rerum ea illum voluptatibus praesentium omnis officia fugit labore sint culpa? Quasi enim recusandae assumenda, facere aut, animi voluptatem tempora nihil rem repellendus porro excepturi obcaecati iusto vero voluptate, non cupiditate eligendi!</p>
+        </div>
+    </div>
+
+    <script>
+        const element = document.querySelector('div.container')
+
+        function handleClick(){
+            if(element.classList.contains('lightMode')){
+                console.log('in light mode');
+                element.classList.remove('lightMode');
+                element.classList.add('darkMode');
+                document.getElementById('lightenButton').style.display = 'block';
+                document.getElementById('modeDisplay').innerHTML = "This is dark mode";
+
+            } else {
+                console.log('in dark mode');
+                let clsList = element.classList;
+                while (clsList.length > 0) {
+                    clsList.remove(clsList.item(0));
+                }
+                console.log(clsList);
+                // element.classList.remove('darkMode');
+                // element.classList.remove('darkestBrown');
+                // element.classList.remove('darkerBrown');
+                // element.classList.remove('darkBrown');
+                // element.classList.remove('lightBrown');
+                // element.classList.remove('lighterBrown');
+                element.classList.add('lightMode');
+                document.getElementById('modeDisplay').innerHTML = "This is light mode"
+                document.getElementById('lightenButton').style.display = 'none';
+            }
+
+        }
+
+        function handleLightness(){
+            if(element.classList.contains('darkMode')){
+                console.log('in dark mode');
+                element.classList.remove('darkMode');
+                element.classList.add('darkestGrey');
+            
+            } else if (element.classList.contains('darkestGrey')) {
+                console.log('in dark mode darkest grey');
+                element.classList.remove('darkestGrey');
+                element.classList.add('darkerGrey');
+            
+            } else if (element.classList.contains('darkerGrey')) {
+                console.log('in dark mode darker grey');
+                element.classList.remove('darkerGrey');
+                element.classList.add('darkGrey');
+            
+            }
+
+            else if (element.classList.contains('darkGrey')) {
+                console.log('in dark mode dark grey');
+                element.classList.remove('darkGrey');
+                element.classList.add('lightGrey');
+            }
+
+            else if (element.classList.contains('lightGrey')) {
+                console.log('in dark mode light grey');
+                element.classList.remove('darkGrey');
+                element.classList.add('lighterGrey');
+                document.getElementById('lightenButton').style.display = 'none';
+            }
+   
+        }
+        document.getElementById('modeButton').addEventListener('click', handleClick)
+        document.getElementById('lightenButton').addEventListener('click', handleLightness)
+
+    
+    </script>
+    
+</body>
+</html>

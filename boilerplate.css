@@ -1,0 +1,81 @@
+body {
+    background-color: blanchedalmond;
+    
+}
+
+.navbar {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    margin: 2% auto;
+}
+
+.navbar .logo img {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+}
+
+.nav-content {
+    /* border: 1px solid red; */
+    width: 75%;
+    /* margin: 0; */
+}
+
+.nav-list {
+    width: 100%;
+    margin: 0;
+    /* background-color: blue; */
+    display: flex;
+    /* flex-direction: column; */
+    gap: 10%;
+}
+
+.nav-list li {
+    width: 30%;
+    list-style-type: none;
+}
+
+.nav-list li a {
+    width: 100%;
+    font-size: 1.5rem;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    /* border: 1px solid green; */
+    background-color: rgb(44, 4, 82);
+    color: antiquewhite;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.nav-list li a:hover {
+    background-color: rgba(44, 4, 82, .7);
+}
+
+.rightNav {
+    /* border : 1px solid red; */
+    display: flex;
+    gap: 1%;
+    align-items: center;
+}
+
+.rightNav #search {
+    height: 30%;
+    align-self: center;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.rightNav .btn {
+    height: 30%;
+    align-self: center;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.section {
+    width: 85%;
+    margin: 0 auto;
+    border: 1px solid;
+
+}
